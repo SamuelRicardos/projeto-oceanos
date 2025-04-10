@@ -8,9 +8,10 @@ function criarBolhas() {
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
 
-    const padding = 10;
-    const maxLeft = window.innerWidth - size - padding * 2;
-    const left = Math.random() * maxLeft + padding;
+    // Aumentamos o "padding de segurança"
+    const margemSegura = 20;
+    const maxLeft = window.innerWidth - size - margemSegura;
+    const left = Math.random() * maxLeft;
     bubble.style.left = `${left}px`;
 
     const duration = Math.random() * 5 + 5;
