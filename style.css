@@ -4,6 +4,12 @@
     font-family: sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
 .hero {
     width: 100%;
     height: 100vh;
@@ -93,6 +99,9 @@ h1 {
 .bubbles img {
     width: 50px;
     animation: bubble 7s linear infinite;
+    animation-fill-mode: backwards;
+    transform: translateY(100vh);
+    opacity: 0;
 }
 
 .bubbles {
@@ -102,6 +111,7 @@ h1 {
     justify-content: space-around;
     position: absolute;
     bottom: 0;
+    pointer-events: none;
 }
 
 @keyframes bubble {
@@ -118,7 +128,7 @@ h1 {
         opacity: 1;
     }
     100% {
-        transform: translateY(-80vh);
+        transform: translateY(-100vh);
         opacity: 0;
     }
 }
