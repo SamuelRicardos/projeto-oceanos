@@ -8,7 +8,10 @@ function criarBolhas() {
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
 
-    bubble.style.left = `${Math.random() * 100}%`;
+    const padding = 10;
+    const maxLeft = window.innerWidth - size - padding * 2;
+    const left = Math.random() * maxLeft + padding;
+    bubble.style.left = `${left}px`;
 
     const duration = Math.random() * 5 + 5;
     const delay = Math.random() * 5;

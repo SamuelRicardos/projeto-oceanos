@@ -105,6 +105,7 @@ h1 {
     pointer-events: none;
     overflow: hidden;
     z-index: 1;
+    padding-right: 30px;
 }
 
 .bubble {
