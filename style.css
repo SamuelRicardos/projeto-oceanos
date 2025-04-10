@@ -96,39 +96,44 @@ h1 {
      bottom: 30px;
 }
 
-.bubbles img {
-    width: 50px;
-    animation: bubble 7s linear infinite;
-    animation-fill-mode: backwards;
-    transform: translateY(100vh);
-    opacity: 0;
-}
-
 .bubbles {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     position: absolute;
     bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
 }
 
-@keyframes bubble {
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    background-image: url(images/bubble.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: bubble-move linear infinite;
+}
+
+
+@keyframes bubble-move {
     0% {
         transform: translateY(0);
         opacity: 0;
     }
+    20% {
+        opacity: 0.4;
+    }
     50% {
-
         opacity: 1;
     }
-    70% {
-
-        opacity: 1;
+    80% {
+        opacity: 0.8;
     }
     100% {
-        transform: translateY(-100vh);
+        transform: translateY(-120vh);
         opacity: 0;
     }
 }
